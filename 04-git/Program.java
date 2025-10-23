@@ -10,7 +10,7 @@ class Geeks
         int n1 = 0, n2 = 1;
 
         for (int i = 0; i < N; i++) {
-            // Print the number
+            // Wyświetl kolejną liczbę fibbonaciego
             System.out.print(n1 + " ");
 
             // Swap
