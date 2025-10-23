@@ -1,0 +1,12 @@
+ # Pliki IDE
+ .idea/
+ .vscode/
+ *.iml
+
+ # Pliki kompilacji Java
+ *.class
+ target/
+
+ # Pliki systemowe
+ .DS_Store
+ Thumbs.db
