@@ -77,17 +77,23 @@ Osoba chcąca zakupić produkt na aukcji.
 ---
 
 <a id="uc2"></a>
-### UC2: ...
+### UC2: Złożenie oferty
 
-**Aktorzy:** [Sprzedający](#ac1), [Kupujący](#ac2), ...
+**Aktorzy:** [Kupujący](#ac2)
 
 **Scenariusz główny:**
-1. ...
+1. [Kupujący](#ac2) wybiera aktywną aukcję.
+2. System prezentuje aktualną najwyższą ofertę i czas pozostały do zakończenia.
+3. [Kupujący](#ac2) wprowadza kwotę oferty wyższą od aktualnej.
+4. System weryfikuje poprawność oferty zgodnie z [BR1](#br1).
+5. System zapisuje ofertę i aktualizuje najwyższą kwotę.
+6. System informuje o pomyślnym złożeniu oferty.
 
-**Scenariusze alternatywne:** 
+**Scenariusze alternatywne:**
 
-1.A. ...
-* 4.A.1. ...
+4.A. Oferta jest niższa niż wymagana.
+* 4.A.1. System informuje Kupującego o konieczności zwiększenia oferty.
+* 4.A.2. Przejdź do kroku 3.
 
 ---
 
