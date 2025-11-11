@@ -200,7 +200,7 @@ Złożenie oferty wymaga zaproponowania kwoty wyższej niż aktualnie oferowana 
 <a id="br2"></a>
 ### BR2: Rozstrzygnięcie aukcji
 
-Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (upłynięcia czasu) złożył najwyższą ofertę.
+Aukcję wygrywa ten z [Kupujących](#ac2), który w momencie jej zakończenia (upłynięcia czasu) złożył najwyższą ofertę.
 
 ## Macierz CRUDL
 
@@ -212,6 +212,6 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 | UC4: Przekazanie należności Sprzedającemu          | R      |         | R      |         |
 | UC5: Wystawienie faktury i przekazanie produktu    | R      | U       |        | C,R     |
 |                                                    |        |         |        |         |
-| UC6: Anulowanie aukcji                             | D      | D       | D      |         |
+| UC6: Anulowanie aukcji                             | D      | D       |        |         |
 | UC7: Przegląd aktywnych aukcji                     | L      | L       | L      |         |
 | UC8: Wycofanie oferty                              |        |         | D      |         |
