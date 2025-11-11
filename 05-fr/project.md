@@ -51,11 +51,16 @@ Osoba chcąca zakupić produkt na aukcji.
 [Sprzedający](#ac1):
 * [UC1](#uc1): Wystawienie produktu na aukcję
 * [UC5](#uc5): Wystawienie faktury i przekazanie produktu
+* [UC6](#uc6): Anulowanie aukcji
+
 
 [Kupujący](#ac2):
 * [UC2](#uc2): Złożenie oferty
 * [UC3](#uc3): Wygranie aukcji
 * [UC4](#uc4): Przekazanie należności Sprzedającemu
+* [UC7](#uc7): Przegląd aktywnych aukcji
+* [UC8](#uc8): Wycofanie oferty
+
 
 ---
 <a id="uc1"></a>
@@ -106,7 +111,7 @@ Osoba chcąca zakupić produkt na aukcji.
 1. System monitoruje czas trwania aukcji.
 2. Po upływie czasu system ustala najwyższą ofertę zgodnie z [BR2](#br2).
 3. System informuje zwycięskiego [Kupującego](#ac2) o wygraniu aukcji.
-4. System udostępnia dane płatności Sprzedającego.
+4. System udostępnia dane płatności [Sprzedającego](#ac1).
 5. Aukcja zostaje oznaczona jako zakończona.
 
 **Scenariusze alternatywne:**
@@ -124,7 +129,7 @@ Osoba chcąca zakupić produkt na aukcji.
 **Scenariusz główny:**
 1. [Kupujący](#ac2) wybiera opcję zapłaty za wygraną aukcję.
 2. System prezentuje dane płatności i kwotę należności.
-3. [Kupujący](#ac2) dokonuje płatności za pomocą wybranego kanału.
+3. [Kupujący](#ac2) dokonuje płatności za pomocą wybranej metody.
 4. System potwierdza otrzymanie płatności.
 5. System informuje [Sprzedającego](#ac1) o zaksięgowaniu należności.
 
@@ -152,7 +157,19 @@ Osoba chcąca zakupić produkt na aukcji.
 
 3.A. Brak wymaganych danych do faktury.
 * 3.A.1. System informuje Sprzedającego o brakach.
-* 3.A.2. Przejdź do kroku 3.
+* 3.A.2. Przejdź do kroku 3.s
+---
+<a id="uc6"></a>
+### UC6: Anulowanie aukcji
+**Aktorzy:** [Sprzedający](#ac1)
+
+<a id="uc7"></a>
+### UC7: Przegląd aktywnych aukcji
+**Aktorzy:** [Kupujący](#ac2)
+
+<a id="uc8"></a>
+### UC8: Wycofanie oferty
+**Aktorzy:** [Kupujący](#ac2)
 
 ---
 
@@ -170,10 +187,6 @@ Fizyczny lub cyfrowy obiekt, który ma zostać sprzedany w ramach aukcji.
 
 Propozycja zakupu produktu w określonej aukcji, zawierająca kwotę zaproponowaną przez Kupującego.
 
-### BO4: Faktura
-
-Dokument potwierdzający sprzedaż produktu po zakończeniu aukcji.
-
 ## Reguły biznesowe
 
 <a id="br1"></a>
@@ -188,11 +201,14 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 
 ## Macierz CRUDL
 
-| Przypadek użycia                                   | Aukcja | Produkt | Oferta | Faktura |
-| -------------------------------------------------- | ------ | ------- | ------- | -------- |
-| UC1: Wystawienie produktu na aukcję                |  C     |  C      |         |          |
-| UC2: Złożenie oferty                               |  R     |  R      |  C,U    |          |
-| UC3: Wygranie aukcji                               |  U     |  R      |  R      |          |
-| UC4: Przekazanie należności Sprzedającemu          |  R     |  R      |  R      |          |
-| UC5: Wystawienie faktury i przekazanie produktu    |  R     |  U      |         |  C       |
-
+| Przypadek użycia                                   | Aukcja | Produkt | Oferta |
+| -------------------------------------------------- | ------ | ------- | ------ |
+| UC1: Wystawienie produktu na aukcję                | C      | C       |        |
+| UC2: Złożenie oferty                               | R      | R       | C      |
+| UC3: Wygranie aukcji                               | U      |         | R      |
+| UC4: Przekazanie należności Sprzedającemu          | R      |         | R      |
+| UC5: Wystawienie faktury i przekazanie produktu    | R      | U       |        |
+|                                                    |        |         |        |
+| UC6: Anulowanie aukcji                             | D      | D       |        |
+| UC7: Przegląd aktywnych aukcji                     | L      | L       | L      |
+| UC8: Wycofanie oferty                              |        |         | D      |
