@@ -209,6 +209,6 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 | UC4: Przekazanie należności Sprzedającemu          | R      |         | R      |
 | UC5: Wystawienie faktury i przekazanie produktu    | R      | U       |        |
 |                                                    |        |         |        |
-| UC6: Anulowanie aukcji                             | D      | D       |        |
+| UC6: Anulowanie aukcji                             | D      | D       | D      |
 | UC7: Przegląd aktywnych aukcji                     | L      | L       | L      |
 | UC8: Wycofanie oferty                              |        |         | D      |
