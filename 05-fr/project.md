@@ -43,7 +43,6 @@ Osoba oferująca towar na aukcji.
 
 Osoba chcąca zakupić produkt na aukcji.
 
-
 ## Przypadki użycia poziomu użytkownika
 
 ### Aktorzy i ich cele
@@ -187,6 +186,10 @@ Fizyczny lub cyfrowy obiekt, który ma zostać sprzedany w ramach aukcji.
 
 Propozycja zakupu produktu w określonej aukcji, zawierająca kwotę zaproponowaną przez Kupującego.
 
+### BO4: Faktura
+
+Dokument potwierdzający sprzedaż produktu po zakończeniu aukcji.
+
 ## Reguły biznesowe
 
 <a id="br1"></a>
@@ -201,14 +204,14 @@ Aukcję wygrywa ten z [Kupujący](#ac2)ch, który w momencie jej zakończenia (u
 
 ## Macierz CRUDL
 
-| Przypadek użycia                                   | Aukcja | Produkt | Oferta |
-| -------------------------------------------------- | ------ | ------- | ------ |
-| UC1: Wystawienie produktu na aukcję                | C      | C       |        |
-| UC2: Złożenie oferty                               | R      | R       | C      |
-| UC3: Wygranie aukcji                               | U      |         | R      |
-| UC4: Przekazanie należności Sprzedającemu          | R      |         | R      |
-| UC5: Wystawienie faktury i przekazanie produktu    | R      | U       |        |
-|                                                    |        |         |        |
-| UC6: Anulowanie aukcji                             | D      | D       | D      |
-| UC7: Przegląd aktywnych aukcji                     | L      | L       | L      |
-| UC8: Wycofanie oferty                              |        |         | D      |
+| Przypadek użycia                                   | Aukcja | Produkt | Oferta | Faktura |
+| -------------------------------------------------- | ------ | ------- | ------ | ------- |
+| UC1: Wystawienie produktu na aukcję                | C      | C       |        |         |
+| UC2: Złożenie oferty                               | R      | R       | C      |         |
+| UC3: Wygranie aukcji                               | U      |         | R      |         |
+| UC4: Przekazanie należności Sprzedającemu          | R      |         | R      |         |
+| UC5: Wystawienie faktury i przekazanie produktu    | R      | U       |        | C,R     |
+|                                                    |        |         |        |         |
+| UC6: Anulowanie aukcji                             | D      | D       | D      |         |
+| UC7: Przegląd aktywnych aukcji                     | L      | L       | L      |         |
+| UC8: Wycofanie oferty                              |        |         | D      |         |
